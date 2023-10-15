@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Survey Form</title>
+    <style>
+        .container {
+            text-align: center;
+            transform: translate(400px);
+            margin-top: 100px;
+            border: 2px saddlebrown solid;
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Survey Form</h1>
+        <form id="survey-form" onsubmit="validateForm()">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="firstname" required><br><br>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="lastname" required><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required><br><br>
+
+            <label for="country">Country:</label>
+            <select id="country" required>
+                <option value="">Select a country</option>
+                <option value="">India</option>
+                <option value="">Australia</option>
+                <option value="">England</option>
+                <option value="">Pakistan</option>
+                <option value="">UK</option>
+            </select><br><br>
+
+            <div class="form-field">
+                <label>Gender:</label>
+                <input type="checkbox" id="male" name="gender" value="Male"> Male
+                <input type="checkbox" id="female" name="gender" value="Female"> Female
+            </div><br>
+
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required><br><br>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" required><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const dob = document.getElementById("dob").value;
+            const country = document.getElementById("country").value;
+            const gender = document.querySelectorAll("input[name='gender']:checked");
+            const profession = document.getElementById("profession").value;
+            const email = document.getElementById("email").value;
+            const mobile = document.getElementById("mobile").value;
+
+            // const popupText = `First Name: ${firstName}\nLast Name: ${lastName}\nDate of Birth: ${dob}\nCountry: ${country}\nGender: ${Array.from(gender, el => el.value).join(", ")}\nProfession: ${profession}\nEmail: ${email}\nMobile Number: ${mobile}`;
+
+            // alert(popupText);
+        }
+
+    </script>
+</body>
+
+</html>
